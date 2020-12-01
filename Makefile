@@ -1,14 +1,11 @@
+NAME := "cempassi/neovim-nightly"
 UUID := $(shell id -u)
 UGID := $(shell id -g)
 
 build:
-	docker build --build-arg UUID=${UUID} --build-arg UGID=${UGID} \
-		-t cempassi/neovim-nightly .
+	docker build --build-arg UUID=${UUID} --build-arg UGID=${UGID} -t $(NAME) .
 
 run:
-	docker container run \
-		--interactive \
-		--rm \
-		--tty \
+	docker container run --interactive --rm --tty \
 		--volume "${PWD}/nvim:/home/neovim/.config/nvim" \
-		cempassi/neovim-nightly
+		$(NAME)

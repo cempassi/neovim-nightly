@@ -19,4 +19,4 @@ The Goal of this image is to provide a sandboxed ubuntu environnement for testin
 
 ## Setup
 
-Pull and run make build to build, and make run to the image.
+Pull and run `make build` to build, and `make run` to run the image.
